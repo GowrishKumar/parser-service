@@ -14,4 +14,17 @@ describe('Parser Service', () => {
         }
         assert.deepEqual(result, expected);
     })
+
+    it('should correctly format and trim padding chars if present', () => {
+        const parserService = new ParserService();
+        const result = parserService.parse("JHON0000MICHAEL0009994567");
+        const expected: ClientModel = {
+            firstName: "JHON",
+            lastName:"MICHAEL",
+            clientId:"999-4567"
+        }
+        assert.deepEqual(result, expected);
+    })
 })
+
+
