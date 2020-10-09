@@ -1,0 +1,19 @@
+{
+  "name": "parser-service",
+  "version": "1.0.0",
+  "description": "a simple parser service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GowrishKumar/parser-service.git"
+  },
+  "author": "Gowrishkumar Jagadeeswaran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GowrishKumar/parser-service/issues"
+  },
+  "homepage": "https://github.com/GowrishKumar/parser-service#readme"
+}
