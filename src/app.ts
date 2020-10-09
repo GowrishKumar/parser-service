@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import {LoggerMiddleware} from "./milddlewares/logger.middleware";
+import {loggerMiddleware} from "./milddlewares/logger.middleware";
 
 export class App {
     public app: express.Application;
@@ -14,9 +14,8 @@ export class App {
     }
 
     private initMiddlewares() {
-        let logger = new LoggerMiddleware();
         this.app.use(bodyParser.json());
-        this.app.use(logger.loggerMiddleware)
+        this.app.use(loggerMiddleware);
     }
 
     private initControllers(controllers: any[]) {
