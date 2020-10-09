@@ -1,7 +1,7 @@
 import {describe} from "mocha";
 import {assert} from "chai";
-import {ParserService} from "../../src/services/parser.service";
-import {ClientModel} from "../../src/models/client.model";
+import {ParserService} from "../../../src/services/parser.service";
+import {ClientModel} from "../../../src/models/client.model";
 
 describe('Parser Service', () => {
     it('should parse', () => {
