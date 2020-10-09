@@ -1,14 +1,15 @@
 import express from "express";
 import {check } from "express-validator"
 import {Validator} from "../milddlewares/validator.middleware";
+import {ParserService} from "../services/parser.service";
 const validations = [
-    check('data').not().isEmpty().isLength({min:25, max:25}).withMessage('data must have 25 characters')
+    check('data').not().isEmpty().isLength({min:25, max:25}).withMessage('data must be a 25 character string')
 ]
 export class ParserController {
     public path = '/parse';
     public router = express.Router();
 
-    constructor() {
+    constructor(private parserService: ParserService) {
         this.initRoutes();
     }
 
@@ -17,6 +18,7 @@ export class ParserController {
     }
 
     parse = (req: express.Request, res:express.Response) => {
-        res.send("Hello!");
+        const data = req.body.data;
+        res.json(this.parserService.parse(data));
     }
 }
