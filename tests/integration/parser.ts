@@ -3,12 +3,12 @@ import "chai-http";
 let chai = require('chai');
 import {app} from "../../src/server"
 import { expect } from "chai";
-import {ClientModel} from "../../src/models/client.model";
+import {IClientModel} from "../../src/models/IClientModel";
 
 chai.use(require('chai-http'))
 describe('/POST parse', ()=>{
     it('should parse the data and return 200', (done)=>{
-        const expected: ClientModel = {
+        const expected: IClientModel = {
             firstName: "JHON0000",
             lastName:"MICHAEL000",
             clientId:"9994567"
@@ -27,7 +27,7 @@ describe('/POST parse', ()=>{
     })
 
     it('should format and trim padding chars if present', (done)=>{
-        const expected: ClientModel = {
+        const expected: IClientModel = {
             firstName: "JHON",
             lastName:"MICHAEL",
             clientId:"999-4567"
