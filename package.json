@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GowrishKumar/parser-service/issues"
   },
-  "homepage": "https://github.com/GowrishKumar/parser-service#readme"
+  "homepage": "https://github.com/GowrishKumar/parser-service#readme",
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
 }
