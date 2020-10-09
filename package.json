@@ -4,10 +4,12 @@
   "description": "a simple parser service",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no tests specified\\\" && exit 1",
-    "build": "rimraf ./build && tsc",
+    "test": "mocha -r ts-node/register 'tests/unit/**/*.ts'",
+    "test:integ" : "mocha -r ts-node/register 'tests/integration/*.ts' --exit",
+    "coverage": "nyc mocha -r ts-node/register 'tests/**/*.ts' --exit",
+    "build": "npm test && rimraf ./build && tsc",
     "start:dev": "nodemon",
-    "start": "npm run build && ./build/index.js"
+    "start": "npm run build && node ./build/server.js"
   },
   "repository": {
     "type": "git",

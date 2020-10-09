@@ -1,8 +1,8 @@
-import {IClientModel} from "../models/IClientModel";
+import {ClientModel} from "../models/client.model";
 
 export class ParserService {
-    public parse(data:string): IClientModel {
-        let result: IClientModel = {
+    public parse(data:string): ClientModel {
+        let result: ClientModel = {
             firstName: data.slice(0,8),
             lastName:data.slice(8,18),
             clientId: data.slice(18)
@@ -10,8 +10,8 @@ export class ParserService {
         return result;
     }
 
-    public parsev2(data:string): IClientModel {
-        let result: IClientModel = {
+    public parsev2(data:string): ClientModel {
+        let result: ClientModel = {
             firstName: this.trimTrailingChars(data.slice(0,8), '0'),
             lastName:this.trimTrailingChars(data.slice(8,18), '0'),
             clientId: this.formatClientId(data.slice(18))
