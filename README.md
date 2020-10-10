@@ -47,7 +47,7 @@ npm run start:dev
 ```
 this will run the application in watch mode with live reload 
 
-### run
+#### run
 ```shell script
 npm start
 ```
